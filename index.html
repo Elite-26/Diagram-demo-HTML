@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Diagram Viewer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="svg-viewer-container">
+    <div class="svg-viewer-content" id="svgViewerContent">
+      <div class="svg-container" id="svgContainer">
+        <!-- SVG content will be loaded here -->
+      </div>
+    </div>
+
+    <div class="details-panel" id="detailsPanel">
+      <div class="placeholder">Click on a block to view its details</div>
+    </div>
+  </div>
+
+  <!-- Modal for connection details -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content" id="modalContent">
+      <button class="modal-close" id="modalClose">×</button>
+      <h2 id="modalTitle"></h2>
+      <div class="modal-summary" id="modalSummary"></div>
+      <div class="modal-description">
+        <h3 id="modalDesTitle"></h3>
+        <p id="modalDescription"></p>
+      </div>
+      <div class="qa-navigation" id="modalNavigation">
+        <button class="qa-nav-button" id="modalPrev">Previous</button>
+        <span class="qa-counter" id="modalCounter"></span>
+        <button class="qa-nav-button" id="modalNext">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
