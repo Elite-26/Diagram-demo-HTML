@@ -27,7 +27,7 @@ const modalCounter = document.getElementById('modalCounter');
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function () {
-  loadSVG();
+  // loadSVG();
   setupEventListeners();
 });
 
@@ -54,38 +54,38 @@ document.addEventListener('DOMContentLoaded', function () {
 //     console.error('Error loading SVG:', error);
 //   }
 // }
-async function loadSVG() {
-  try {
-    const response = await fetch('assets/SVG222.svg');
-    const svgText = await response.text();
+// async function loadSVG() {
+//   try {
+//     const response = await fetch('assets/SVG222.svg');
+//     const svgText = await response.text();
 
-    // Add viewBox and preserveAspectRatio if missing
-    const modifiedSvg = svgText.replace(
-      /<svg([^>]*)>/,
-      (match, attributes) => {
-        const hasViewBox = /viewBox\s*=/.test(attributes);
-        const hasPreserve = /preserveAspectRatio\s*=/.test(attributes);
+//     // Add viewBox and preserveAspectRatio if missing
+//     const modifiedSvg = svgText.replace(
+//       /<svg([^>]*)>/,
+//       (match, attributes) => {
+//         const hasViewBox = /viewBox\s*=/.test(attributes);
+//         const hasPreserve = /preserveAspectRatio\s*=/.test(attributes);
 
-        let result = `<svg${attributes}`;
-        if (!hasViewBox) result += ' viewBox="0 0 100 100"';
-        if (!hasPreserve) result += ' preserveAspectRatio="xMidYMid meet"';
-        return result + '>';
-      }
-    );
+//         let result = `<svg${attributes}`;
+//         if (!hasViewBox) result += ' viewBox="0 0 100 100"';
+//         if (!hasPreserve) result += ' preserveAspectRatio="xMidYMid meet"';
+//         return result + '>';
+//       }
+//     );
 
-    const svgContainer = document.getElementById('svgContainer');
-    if (!svgContainer) {
-      console.error('svgContainer element not found in HTML');
-      return;
-    }
+//     const svgContainer = document.getElementById('svgContainer');
+//     if (!svgContainer) {
+//       console.error('svgContainer element not found in HTML');
+//       return;
+//     }
 
-    svgContainer.innerHTML = modifiedSvg;
-    applySVGStyles(); // Optional: add interactivity here
+//     svgContainer.innerHTML = modifiedSvg;
+//     applySVGStyles(); // Optional: add interactivity here
 
-  } catch (error) {
-    console.error('Error loading SVG:', error);
-  }
-}
+//   } catch (error) {
+//     console.error('Error loading SVG:', error);
+//   }
+// }
 
 // Setup event listeners
 function setupEventListeners() {
